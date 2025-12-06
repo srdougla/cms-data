@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <title>CMS Database Viewer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>CMS Database Viewer</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="tableSelect">Select a table:</label>
+                <select id="tableSelect">
+                    <option value="">-- Choose a table --</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="viewAllBtn" disabled>View All Rows</button>
+                <button id="viewPreviewBtn" class="secondary-btn" disabled>View First 20 Rows</button>
+                <button id="viewInfoBtn" class="info-btn" disabled>Table Info</button>
+                <button id="queryBtn" class="query-btn" disabled>Build Query</button>
+                <button id="joinBtn" class="join-btn" disabled>🔗 Join Tables</button>
+            </div>
+            
+            <div id="loading">Loading...</div>
+        </div>
+        
+        <div id="errorContainer"></div>
+
+        <div id="searchContainer" style="display: none;">
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search table..."
+                autocomplete="off"
+            >
+            <span id="searchResults"></span>
+        </div>
+
+        <div id="tableContainer" class="empty">
+            <p>Select a table above to view CMS data</p>
+        </div>
+    </div>
+
+    <script src="static/js/load_tables.js"></script>
+
+</body>
+</html>
